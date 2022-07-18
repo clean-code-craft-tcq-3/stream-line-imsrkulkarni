@@ -1,3 +1,4 @@
+
 name: Build and Run
 
 on: [push, pull_request]
@@ -14,9 +15,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y gcovr
-    - name: build
-      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker *.c*
+    - name: build sender
+      run: g++ -Wall -Wextra -fprofile-arcs -ftest-coverage -o testchecker testsender.cpp ./sender/sender.c
       
+    - name: run
+      run: ./testchecker
+         
     - name: run
       run: ./testchecker
 
