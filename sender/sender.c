@@ -20,9 +20,10 @@ void ReadBMSParametersFromInputFile(float* Temp, float* SOC)
 
 void PrintBMSParametersOnConsole(float* Temp, float* SOC)
 {
+   printf("Temperature\t   StateOfCharge\n");
   for (int i=0; i<TotalSamples; i++)
   {
-    printf(" Temperature:%.2f deg C, StateofCharge:%.2f",  *(Temp+i),*(SOC+i));
+    printf("%.2f deg C \t    %.2f",  *(Temp+i),*(SOC+i));
   }
 }
 
