@@ -23,7 +23,7 @@ void PrintBMSParametersOnConsole(float* Temp, float* SOC)
    printf("Temperature\t   StateOfCharge\n");
   for (int i=0; i<TotalSamples; i++)
   {
-    printf("%.2f deg C \t    %.2f",  *(Temp+i),*(SOC+i));
+    printf("%.2f deg C \t    %.2f\n",  *(Temp+i),*(SOC+i));
   }
 }
 
